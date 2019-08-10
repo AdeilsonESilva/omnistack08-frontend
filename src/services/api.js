@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { ENDPOINT } from '../utils/constants';
 
 const api = axios.create({
-  baseURL: 'https://tindev-back.herokuapp.com'
+  baseURL: ENDPOINT
 });
 
 export default api;

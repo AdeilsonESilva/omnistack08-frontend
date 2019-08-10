@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { Link } from 'react-router-dom';
+import { ENDPOINT } from '../utils/constants';
 import './Main.css';
 
 import api from '../services/api';
@@ -29,7 +30,7 @@ export default function Main ({ match }) {
   }, [match.params.id]);
 
   useEffect(() => {
-    const socket = io('http://localhost:3333', {
+    const socket = io(ENDPOINT, {
       query: { user: match.params.id }
     });
 
